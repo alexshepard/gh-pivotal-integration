@@ -17,7 +17,7 @@ Pick a username, `BASIC_USER`, and password, `BASIC_PASSWORD`, to secure your in
 Install dependencies:
 
 ```bash
-    git clone https://github.com/ThreadSuite/gh-pivotal-integration.git
+    git clone https://github.com/alexshepard/gh-pivotal-integration.git
     cd gh-pivotal-integration
     gem install bundler  # if not already installed
     bundle install
@@ -43,7 +43,7 @@ Run gh-pivotal-integration using rack (or your favorite server):
 To deploy gh-pivotal-integration on a free Heroku account, simply follow these steps:
 
 ```bash
-    git clone https://github.com/ThreadSuite/gh-pivotal-integration.git
+    git clone https://github.com/alexshepard/gh-pivotal-integration.git
     cd gh-pivotal-integration
     heroku create --stack cedar
     heroku config:add GH_USER="myuser" GH_PASSWORD="mygithubpassword" \
