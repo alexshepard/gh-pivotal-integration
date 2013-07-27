@@ -11,7 +11,7 @@ end
 
 if ENV["GH_ENT_BASE_URL"]
   Octokit.configure do |c|
-    c.api_endpoint = ENV["GH_ENT_BASE_URL"] + "/api/v3"
+    c.api_endpoint = ENV["GH_ENT_BASE_URL"] + "api/v3"
     c.web_endpoint = ENV["GH_ENT_BASE_URL"]
   end
 end
