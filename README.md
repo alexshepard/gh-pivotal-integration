@@ -52,7 +52,7 @@ To deploy gh-pivotal-integration on a free Heroku account, simply follow these s
     git clone https://github.com/alexshepard/gh-pivotal-integration.git
     cd gh-pivotal-integration
     heroku create --stack cedar
-    heroku config:add GH_USER="myuser" GH_PASSWORD="mygithubpassword" \
+    heroku config:set GH_USER="myuser" GH_PASSWORD="mygithubpassword" \
                       BASIC_USER="admin" BASIC_PASSWORD="password"
     git push heroku master
 ```
@@ -60,7 +60,7 @@ To deploy gh-pivotal-integration on a free Heroku account, simply follow these s
 Once again, if you're using GitHub enterprise, add the GH_ENT_BASE_URL variable. Don't forget the trailing slash (/):
 
 ```bash
-    heroku config add GH_ENT_BASE_URL="https://github.company.com/"
+    heroku config:set GH_ENT_BASE_URL="https://github.company.com/"
 ```
 
 Your credentials are protected since [Heroku's Piggyback SSL is now a platform feature](https://devcenter.heroku.com/changelog-items/10).
