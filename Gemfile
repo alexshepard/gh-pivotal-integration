@@ -17,7 +17,7 @@ end
 group :default do
   gem "octokit", "~> 1.25.0"
   gem "nokogiri", "~> 1.4.7"
-  gem "sinatra", "~> 1.2.8"
+  gem "sinatra", "~> 1.4.3"
   gem "rack", "~> 1.4.1"
 end
 
