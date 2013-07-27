@@ -32,6 +32,12 @@ Set these environment variables in your shell or `.bashrc`:
     export BASIC_PASSWORD="password"
 ```
 
+If you're using GitHub enterprise, set this variable in your environment, and don't forget the trailing slash (/):
+
+```bash
+    export GH_ENT_BASE_URL="https://github.company.com/"
+```
+
 Run gh-pivotal-integration using rack (or your favorite server):
 
 ```bash
@@ -49,6 +55,12 @@ To deploy gh-pivotal-integration on a free Heroku account, simply follow these s
     heroku config:add GH_USER="myuser" GH_PASSWORD="mygithubpassword" \
                       BASIC_USER="admin" BASIC_PASSWORD="password"
     git push heroku master
+```
+
+Once again, if you're using GitHub enterprise, add the GH_ENT_BASE_URL variable. Don't forget the trailing slash (/):
+
+```bash
+    heroku config add GH_ENT_BASE_URL="https://github.company.com/"
 ```
 
 Your credentials are protected since [Heroku's Piggyback SSL is now a platform feature](https://devcenter.heroku.com/changelog-items/10).

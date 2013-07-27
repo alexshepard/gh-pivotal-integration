@@ -9,6 +9,13 @@ configure do
   set :basic_password, ENV["BASIC_PASSWORD"] || "admin"
 end
 
+if ENV["GH_ENT_BASE_URL"]
+  Octokit.configure do |c|
+    c.api_endpoint = ENV["GH_ENT_BASE_URL"] + "/api/v3"
+    c.web_endpoint = ENV["GH_ENT_BASE_URL"]
+  end
+end
+
 $ghcli = Octokit::Client.new :login => settings.gh_user , :password => settings.gh_password
 
 helpers do
