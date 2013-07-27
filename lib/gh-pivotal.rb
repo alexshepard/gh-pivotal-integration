@@ -42,6 +42,17 @@ helpers do
     issue_number = issue_uri[1]
     $ghcli.close_issue(issue_base_path, issue_number)
   end
+
+  def add_testing_label_issue(issue_xml)
+    issue_uri = issue_xml.xpath('//other_id').text.split("/issues/")
+    return if issue_uri.nil?
+
+    issue_base_path = issue_uri[0]
+    issue_number = issue_uri[1]
+
+    labels = $ghcli.add_labels_to_an_issue(issue_base_path, issue_number, [:Testing])
+    return
+  end
   
   def protected!
     unless authorized?
@@ -70,5 +81,7 @@ post '/issues' do
   current_state = doc.xpath('//current_state').text
   if current_state  == "accepted" then
     close_issue(doc)
+  elsif current_state == "delivered" then
+    add_testing_label_issue(doc)
   end
 end
