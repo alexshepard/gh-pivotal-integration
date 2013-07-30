@@ -41,6 +41,7 @@ helpers do
     issue_base_path = issue_uri[0]
     issue_number = issue_uri[1]
     $ghcli.close_issue(issue_base_path, issue_number)
+    return
   end
 
   def add_testing_label_issue(issue_xml)
